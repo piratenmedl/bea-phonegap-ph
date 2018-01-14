@@ -24,6 +24,8 @@
 			<engine name="cordova" version="1.8.1" />
 			<engine name="cordova-android" version=">=1.7.0" />
 		</engines>-->
+		<preference name="android-build-tool" value="gradle" />
+		<preference name="deployment-target" value="7.0" />
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="Photos">
 				<param name="android-package" value="com.domax.cordova.Photos"/>
