@@ -19,8 +19,6 @@
 	</js-module>
 
 	<platform name="android">
-		<preference name="android-build-tool" value="gradle" />
-		<preference name="deployment-target" value="7.0" />
 		<!--<engines>
 			<engine name="cordova" version="1.7.0" />
 			<engine name="cordova" version="1.8.1" />
