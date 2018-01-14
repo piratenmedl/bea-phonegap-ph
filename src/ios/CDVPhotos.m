@@ -42,6 +42,7 @@ NSString* const P_LON = @"longitude";
 NSString* const P_DATE = @"date";
 NSString* const P_TS = @"timestamp";
 NSString* const P_TYPE = @"contentType";
+NSString* const P_ORIENT = @"orientation"; //bea
 
 NSString* const P_SIZE = @"dimension";
 NSString* const P_QUALITY = @"quality";
@@ -202,6 +203,7 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
                                   NSMutableDictionary<NSString*, NSObject*>* assetItem
                                   = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                      asset.localIdentifier, P_ID,
+                                     orientation, P_ORIENT, //bea
                                      name, P_NAME,
                                      type, P_TYPE,
                                      [weakSelf.dateFormat stringFromDate:asset.creationDate], P_DATE,
