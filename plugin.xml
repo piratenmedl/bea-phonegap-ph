@@ -19,8 +19,8 @@
 	</js-module>
 
 	<platform name="android">
-		<property name="java.target" value="1.7" />
-		<property name="java.source" value="1.7" />
+		<!--<property name="java.target" value="1.7" />
+		<property name="java.source" value="1.7" />-->
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="Photos">
 				<param name="android-package" value="com.domax.cordova.Photos"/>
