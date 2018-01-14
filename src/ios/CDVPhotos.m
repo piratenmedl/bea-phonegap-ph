@@ -203,7 +203,7 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
                                   NSMutableDictionary<NSString*, NSObject*>* assetItem
                                   = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                      asset.localIdentifier, P_ID,
-                                     orientation, P_ORIENT, //bea
+                                     //orientation, P_ORIENT, //bea
                                      name, P_NAME,
                                      type, P_TYPE,
                                      [weakSelf.dateFormat stringFromDate:asset.creationDate], P_DATE,
