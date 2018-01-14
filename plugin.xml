@@ -22,6 +22,7 @@
 	<engines>
 		<engine name="cordova" version="1.7.0" />
 		<engine name="cordova" version="1.8.1" />
+		<engine name="cordova-android" version=">=1.7.0" />
 	</engines>
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="Photos">
