@@ -42,7 +42,7 @@ NSString* const P_LON = @"longitude";
 NSString* const P_DATE = @"date";
 NSString* const P_TS = @"timestamp";
 NSString* const P_TYPE = @"contentType";
-NSString* const P_ORIENT = @"orientation"; //bea
+NSString* const P_ORIENT = @"imageOrientation"; //bea
 
 NSString* const P_SIZE = @"dimension";
 NSString* const P_QUALITY = @"quality";
@@ -203,14 +203,12 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
                                   NSMutableDictionary<NSString*, NSObject*>* assetItem
                                   = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                      asset.localIdentifier, P_ID,
-                                     //imageOrientation, P_ORIENT, //bea
                                      name, P_NAME,
                                      type, P_TYPE,
                                      [weakSelf.dateFormat stringFromDate:asset.creationDate], P_DATE,
                                      @((long) (asset.creationDate.timeIntervalSince1970 * 1000)), P_TS,
                                      @(asset.pixelWidth), P_WIDTH,
                                      @(asset.pixelHeight), P_HEIGHT,
-									 //@(asset.imageOrientation), P_ORIENT, 
                                      nil];
                                   if (![weakSelf isNull:asset.location]) {
                                       CLLocationCoordinate2D coord = asset.location.coordinate;
