@@ -210,7 +210,7 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
                                      @((long) (asset.creationDate.timeIntervalSince1970 * 1000)), P_TS,
                                      @(asset.pixelWidth), P_WIDTH,
                                      @(asset.pixelHeight), P_HEIGHT,
-									 @(asset.imageOrientation), P_ORIENT, //bea
+									 @(asset.imageOrientation), P_ORIENT, 
                                      nil];
                                   if (![weakSelf isNull:asset.location]) {
                                       CLLocationCoordinate2D coord = asset.location.coordinate;
