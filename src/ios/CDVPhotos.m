@@ -199,18 +199,18 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
                           NSString* ext = [[filename substringWithRange:[match rangeAtIndex:2]] uppercaseString];
                           NSString* type = weakSelf.extType[ext];
                           if (![weakSelf isNull:type]) {
-                              if (offset <= fetched) {
+                              if (offset <= fetched) { 
                                   NSMutableDictionary<NSString*, NSObject*>* assetItem
                                   = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                      asset.localIdentifier, P_ID,
-                                     //orientation, P_ORIENT, //bea
+                                     image.orientation, P_ORIENT, //bea
                                      name, P_NAME,
                                      type, P_TYPE,
                                      [weakSelf.dateFormat stringFromDate:asset.creationDate], P_DATE,
                                      @((long) (asset.creationDate.timeIntervalSince1970 * 1000)), P_TS,
                                      @(asset.pixelWidth), P_WIDTH,
                                      @(asset.pixelHeight), P_HEIGHT,
-									 @(asset.imageOrientation), P_ORIENT, 
+									 //@(asset.imageOrientation), P_ORIENT, 
                                      nil];
                                   if (![weakSelf isNull:asset.location]) {
                                       CLLocationCoordinate2D coord = asset.location.coordinate;
