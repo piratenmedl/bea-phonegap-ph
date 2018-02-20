@@ -27,6 +27,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
