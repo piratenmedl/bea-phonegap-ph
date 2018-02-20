@@ -27,7 +27,6 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.media.ExifInterface; //bea
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
@@ -350,65 +349,6 @@ public class Photos extends CordovaPlugin {
 	private synchronized void setPhotosCallbackContext(CallbackContext photosCallbackContext) {
 		this.photosCallbackContext = photosCallbackContext;
 	}
-
-  	//bea Exif ================================================================
-	private static int getImageOrientation(File imageFile) throws IOException {
-  
-	  ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());
-	  int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-  
-	  return orientation;
-  
-	}
-  
-	// see http://www.daveperrett.com/articles/2012/07/28/exif-orientation-handling-is-a-ghetto/
-	private static Bitmap rotateImage(Bitmap source, int orientation) {
-  
-	  Matrix matrix = new Matrix();
-  
-	  switch (orientation) {
-		case ExifInterface.ORIENTATION_NORMAL: // 1
-			return source;
-		case ExifInterface.ORIENTATION_FLIP_HORIZONTAL: // 2
-		  matrix.setScale(-1, 1);
-		  break;
-		case ExifInterface.ORIENTATION_ROTATE_180: // 3
-		  matrix.setRotate(180);
-		  break;
-		case ExifInterface.ORIENTATION_FLIP_VERTICAL: // 4
-		  matrix.setRotate(180);
-		  matrix.postScale(-1, 1);
-		  break;
-		case ExifInterface.ORIENTATION_TRANSPOSE: // 5
-		  matrix.setRotate(90);
-		  matrix.postScale(-1, 1);
-		  break;
-		case ExifInterface.ORIENTATION_ROTATE_90: // 6
-		  matrix.setRotate(90);
-		  break;
-		case ExifInterface.ORIENTATION_TRANSVERSE: // 7
-		  matrix.setRotate(-90);
-		  matrix.postScale(-1, 1);
-		  break;
-		case ExifInterface.ORIENTATION_ROTATE_270: // 8
-		  matrix.setRotate(-90);
-		  break;
-		default:
-		  return source;
-	  }
-  
-	  return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, false);
-  
-	}
-  
-	// Returns true if orientation rotates image by 90 or 270 degrees.
-	private static boolean isOrientationSwapsDimensions(int orientation) {
-	  return orientation == ExifInterface.ORIENTATION_TRANSPOSE // 5
-		|| orientation == ExifInterface.ORIENTATION_ROTATE_90 // 6
-		|| orientation == ExifInterface.ORIENTATION_TRANSVERSE // 7
-		|| orientation == ExifInterface.ORIENTATION_ROTATE_270; // 8
-	}
-  	//end bea Exif ================================================================
 
 	private String repeatText(int count, String text, String separator) {
 		if (count <= 0 || text == null || text.isEmpty()) return "";
