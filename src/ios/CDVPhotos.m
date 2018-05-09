@@ -81,8 +81,8 @@ NSString* const E_PHOTO_BUSY = @"Fetching of photo assets is in progress";
 
     _extType = @{@"JPG": @"image/jpeg",
                  @"JPEG": @"image/jpeg",
-                 @"JPEG": @"image/heic",
-                 @"JPEG": @"image/heif",
+                 @"HEIC": @"image/heic",
+                 @"HEIF": @"image/heif",
                  @"PNG": @"image/png",
                  @"GIF": @"image/gif",
                  @"TIF": @"image/tiff",
